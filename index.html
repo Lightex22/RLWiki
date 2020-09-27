@@ -7,6 +7,28 @@
   <h2 style="color:White;text-align:center;"><u>Egyéb infókért katt <a href=https://www.rocketleague.com/news/">ide.</u></a></h2>
     <h3 style="color:White;"> Az oldalon találkozhattok nagyon sok érdekes tartalommal, mint például az itemek áráva, és besorolásukkal.( Akár linkeken keresztül is. )</h3>
     <img src="itemek2.jpg" alt="itemek2" width="1000" height="388">
+    <p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
     <style>
 body {
   background-image: url('képp.jpg');
